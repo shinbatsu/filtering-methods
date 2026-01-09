@@ -1,0 +1,54 @@
+[project]
+name = "wiener-kalman"
+version = "0.1.0"
+description = "Wiener-Kalman signal filtration and analysis"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "matplotlib>=3.10.7",
+    "numpy>=2.3.5",
+    "openpyxl>=3.1.5",
+    "pandas>=2.3.3",
+    "ruff>=0.14.11",
+    "scipy>=1.16.3",
+]
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.isort]
+profile = "black"
+line-length = 88
+combine_as_imports = true
+known_first_party = ["your_package_name"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort (импорты)
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "SIM", # flake8-simplify
+]
+
+ignore = [
+    "E203", # whitespace before ':'
+    "E266", # too many leading '#'
+    "E501", # line length (Black рулит)
+]
+
+fix = true
+
+exclude = [
+    ".git",
+    ".venv",
+    "venv",
+    "__pycache__",
+    "build",
+    "dist",
+]
